@@ -1,0 +1,13 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+
+
+<h2>Confirm Delete Student</h2>
+<p>Are you sure you want to delete {{ student }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+<a href="{% url 'accounts:view_student' %}" class="btn btn-secondary">Cancel</a>
+
+</form>
+{% endblock %}

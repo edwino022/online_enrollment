@@ -1,0 +1,67 @@
+{% extends "accounts/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+
+<div class="mb-4">
+  <div class="p-3 bg-primary text-white rounded shadow-sm">
+    <h1 class="m-0">Student Dashboard</h1>
+  </div>
+</div>
+
+<div class="row g-4">
+
+ <!-- Students Card -->
+<div class="col-12 col-md-6 col-lg-3">
+  <div class="card h-100 shadow-sm rounded-3">
+    <div class="card-body">
+      <h5 class="card-title">Students</h5>
+      <p class="card-text text-muted">Total Students: <strong>{{ student_count }}</strong></p>
+      <a href="{% url 'accounts:view_student' %}" class="btn btn-outline-secondary me-2">View Students</a>
+      <a href="{% url 'accounts:add_student' %}" class="btn btn-success">Add Student</a>
+    </div>
+  </div>
+</div>
+
+<!-- Subjects Card -->
+<div class="col-12 col-md-6 col-lg-3">
+  <div class="card h-100 shadow-sm rounded-3">
+    <div class="card-body">
+      <h5 class="card-title">Subjects</h5>
+      <p class="card-text text-muted">Total Subjects: <strong>{{ subject_count }}</strong></p>
+      <a href="{% url 'accounts:view_subject' %}" class="btn btn-outline-secondary me-2">View Subjects</a>
+      <a href="{% url 'accounts:add_subject' %}" class="btn btn-success">Add Subject</a>
+    </div>
+  </div>
+</div>
+
+<!-- Schedules Card -->
+<div class="col-12 col-md-6 col-lg-3">
+  <div class="card h-100 shadow-sm rounded-3">
+    <div class="card-body">
+      <h5 class="card-title">Schedules</h5>
+      <p class="card-text text-muted">Total Schedules: <strong>{{ schedule_count }}</strong></p>
+      <a href="{% url 'accounts:view_schedule' %}" class="btn btn-outline-secondary me-2">View Schedules</a>
+      <a href="{% url 'accounts:add_schedule' %}" class="btn btn-success">Add Schedule</a>
+    </div>
+  </div>
+</div>
+
+<!-- Enrollments Card -->
+<div class="col-12 col-md-6 col-lg-3">
+  <div class="card h-100 shadow-sm rounded-3">
+    <div class="card-body">
+      <h5 class="card-title">Enrollments</h5>
+      <p class="card-text text-muted">Total Enrollments: <strong>{{ enrollment_count }}</strong></p>
+      <a href="{% url 'accounts:view_enrollment' %}" class="btn btn-outline-secondary me-2">View Enrollments</a>
+      <a href="{% url 'accounts:add_enrollment' %}" class="btn btn-success">Add Enrollment</a>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

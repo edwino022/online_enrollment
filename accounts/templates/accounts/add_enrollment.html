@@ -1,0 +1,12 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+<h2>Add Enrollment</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="{% url 'accounts:view_enrollment' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

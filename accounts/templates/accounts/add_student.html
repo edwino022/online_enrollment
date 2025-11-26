@@ -1,0 +1,12 @@
+{% extends "accounts/base.html" %}
+{% block title %}Add Student{% endblock %}
+
+{% block content %}
+<h2>Add Student</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Add Student</button>
+</form>
+<a href="{% url 'accounts:view_student' %}" class="btn btn-secondary mt-2">Back to Students</a>
+{% endblock %}

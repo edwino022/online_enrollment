@@ -1,0 +1,13 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+
+
+<h2>Confirm Delete Subject</h2>
+<p>Are you sure you want to delete {{ subject }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+<a href="{% url 'accounts:delete_subject' pk=form.instance.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+
+{% endblock %}

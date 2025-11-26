@@ -1,0 +1,12 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+
+
+<h2>Edit Schedule</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+<a href="{% url 'accounts:edit_schedule' pk=form.instance.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
